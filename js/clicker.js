@@ -107,19 +107,34 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Fin sop',
+        name: 'Fists', 
+        class: 'fists',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Spade',
+        name: 'Wooden Sword',
+        class: 'wood-sword',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Hjälpreda',
-        cost: 1000,
-        amount: 100,
+        name: 'Metal blade',
+        class: 'metal-blade',
+        cost: 2500,
+        amount: 50,
+    },
+    {
+        name: 'Sharpness',
+        class: 'sharpness',
+        cost: 3000,
+        amount: 30,
+    },
+    {
+        name: 'Eldritch blade',
+        class: 'eldritch-blade',
+        cost: 450000,
+        amount: 7200,
     },
 ];
 
@@ -144,6 +159,7 @@ upgrades = [
 function createCard(upgrade) {
     const card = document.createElement('div');
     card.classList.add('card');
+    card.classList.add(upgrade.class);
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
@@ -158,9 +174,9 @@ function createCard(upgrade) {
             upgrade.cost *= 1.5;
             cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
             moneyPerSecond += upgrade.amount;
-            message('Grattis du har lockat till dig fler besökare!', 'success');
+            message('Congratulations, you feel stronger!', 'success');
         } else {
-            message('Du har inte råd.', 'warning');
+            message('You are broke.', 'warning');
         }
     });
 

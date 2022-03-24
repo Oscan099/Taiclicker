@@ -150,6 +150,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 30px;
 }
 .game {
     margin-top: 2rem;
@@ -168,9 +169,8 @@ footer {
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
-    width: 8rem;
-    height: 8rem;
-    font-size: 2rem;
+    width: 10rem;
+    height: 10rem;
 }
 
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
@@ -217,7 +217,9 @@ footer {
     margin: 0.5rem 0;
     padding: 1rem 0.5rem;
 }
-
+.card {
+    background-color: darkgray;
+}
 .card:hover {
     background-color: #dfdfdf;
 }
@@ -226,4 +228,13 @@ footer {
  */
 .title {
     font-weight: 600;
+}
+body {
+    background-image: url("Bakgrund.png");
+    background-size: cover;
+   }
+.img-container {
+    display: flex;
+    align-items: center;
+
 }
