@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+* {
+    font-size: 100%;
+    font-family: Arial;
+   }
 /* Remove default margin */
 body,
 h1,
@@ -173,6 +177,11 @@ footer {
     height: 10rem;
 }
 
+#click {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
 * fixed fungerar liknande absolute för att positionera element på ett fast ställe
 * vi använder måttet vmin som skalas efter webbläsarens storlek
@@ -213,12 +222,14 @@ footer {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    border: 1px solid #646464;
+    border: 3px solid #d69419;
     margin: 0.5rem 0;
     padding: 1rem 0.5rem;
+    height: 5.8rem;
+    align-self: center;
 }
 .card {
-    background-color: darkgray;
+    background-color: rgb(197, 209, 211);
 }
 .card:hover {
     background-color: #dfdfdf;
@@ -230,11 +241,53 @@ footer {
     font-weight: 600;
 }
 body {
-    background-image: url("Bakgrund.png");
+    background-image: url("../img/Bakgrund.png");
     background-size: cover;
    }
 .img-container {
     display: flex;
     align-items: center;
 
+}
+
+.fists {
+    background-image: url(../img/fists.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.wood-sword {
+    background-image: url(../img/wood.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.metal-blade {
+    background-image: url(../img/metal.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.sharpness {
+    background-image: url(../img/sharp.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.eldritch-blade {
+    background-image: url(../img/eldritch.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.star-slash {
+    background-image: url(../img/star.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.nuke {
+    background-image: url(../img/nuke.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
 }

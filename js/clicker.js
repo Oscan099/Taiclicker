@@ -73,7 +73,7 @@ function step(timestamp) {
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
     if (moneyPerClick == 10 && !achievementTest) {
         achievementTest = true;
-        message('Du har hittat en FOSSIL!', 'achievement');
+        message('Epic Monster Slain!', 'achievement');
     }
 
     window.requestAnimationFrame(step);
@@ -107,34 +107,46 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Fists', 
+        name: '. . . . . . . . . . .[Fists]', 
         class: 'fists',
         cost: 10,
-        amount: 1,
+        clicks: 1,
     },
     {
-        name: 'Wooden Sword',
+        name: '. . . . . . . . . . .[Wooden Sword]',
         class: 'wood-sword',
         cost: 100,
-        amount: 10,
+        clicks: 5,
     },
     {
-        name: 'Metal blade',
+        name: '. . . . . . . . . . .[Metal blade]',
         class: 'metal-blade',
         cost: 2500,
-        amount: 50,
+        clicks: 30,
     },
     {
-        name: 'Sharpness',
+        name: '. . . . . . . . . . .[Sharpness]',
         class: 'sharpness',
         cost: 3000,
         amount: 30,
     },
     {
-        name: 'Eldritch blade',
+        name: '. . . . . . . . . . .[Eldritch blade]',
         class: 'eldritch-blade',
         cost: 450000,
-        amount: 7200,
+        clicks: 720,
+    },
+    {
+        name: '. . . . . . . . . . .[Star Slasher]',
+        class: 'star-slash',
+        cost: 4500000,
+        clicks: 10000,
+    },
+    {
+        name: '. . . . . . . . . . .[Nuke]',
+        class: 'nuke',
+        cost: 45000000,
+        clicks: 100000,
     },
 ];
 
@@ -163,17 +175,20 @@ function createCard(upgrade) {
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
-
-    header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
-
+    if (upgrade.amount) {
+        header.textContent = `${upgrade.name}, +${upgrade.amount} Souls/Second.`;
+    } else {
+        header.textContent = `${upgrade.name}, +${upgrade.clicks} Souls/Click.`;
+    }
+    cost.textContent = `Buy For ${upgrade.cost} Souls.`;
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
-            upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
-            moneyPerSecond += upgrade.amount;
+            upgrade.cost *= 2;
+            cost.textContent = 'Buy For ' + upgrade.cost + ' Souls';
+            moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
+            moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Congratulations, you feel stronger!', 'success');
         } else {
             message('You are broke.', 'warning');
