@@ -119,7 +119,7 @@ function step(timestamp) {
         money += 90000000000
         message('Demi-god Slain!', 'achievement8');
     }
-    if (moneyPerClick >= 10000000000 && !achievementTest9) {
+    if (moneyPerClick >= 5000000000 && !achievementTest9) {
         achievementTest9 = true;
         money = Infinity
         message('God Monster Slain!', 'achievement9');
@@ -221,9 +221,6 @@ upgrades = [
     },
 ];
 
-    if (upgrade.fists) {
-
-}
 /* createCard är en funktion som tar ett upgrade objekt som parameter och skapar
  * ett html kort för det.
  * För att skapa nya html element så används document.createElement(), elementen
@@ -259,7 +256,7 @@ function createCard(upgrade) {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
-            upgrade.cost *= 1.5
+            upgrade.cost *= 1.2
             cost.textContent = 'Buy For ' + Math.round(upgrade.cost) + ' Souls';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
@@ -267,6 +264,9 @@ function createCard(upgrade) {
         } else {
             message('You are broke.', 'warning');
         }
+        if (moneyPerClick >= 100000000000) {
+            moneyPerClick += Infinity
+    }
     });
 
     card.appendChild(header);
