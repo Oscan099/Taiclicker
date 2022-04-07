@@ -27,7 +27,15 @@ let moneyPerSecond = 0;
 let last = 0;
 
 let achievementTest = false;
-
+let achievementTest2 = false;
+let achievementTest3 = false;
+let achievementTest4 = false;
+let achievementTest5 = false;
+let achievementTest6 = false;
+let achievementTest7 = false;
+let achievementTest8 = false;
+let achievementTest9 = false;
+let achievementTest10 = false;
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
  * med addEventListener så kan vi lyssna på ett specifikt event på ett html-element
  * som ett klick.
@@ -71,11 +79,56 @@ function step(timestamp) {
     // achievements. Titta dock på upgrades arrayen och gör något rimligare om du
     // vill ha achievements.
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
-    if (moneyPerClick == 10 && !achievementTest) {
+    if (moneyPerClick >= 10 && !achievementTest) {
         achievementTest = true;
-        message('Epic Monster Slain!', 'achievement');
+        money += 300;
+        message('Uncommon Monster Slain!', 'achievement');
     }
-
+    if (moneyPerClick >= 100 && !achievementTest2) {
+        achievementTest2 = true;
+        money += 10000
+        message('Rare Monster Slain!', 'achievement2');
+    }
+    if (moneyPerClick >= 1000 && !achievementTest3) {
+        achievementTest3 = true;
+        money += 45000
+        message('Epic Monster Slain!', 'achievement3');
+    }
+    if (moneyPerClick >= 10000 && !achievementTest4) {
+        achievementTest4 = true;
+        money += 300000
+        message('Legendary Monster Slain!', 'achievement4');
+    }
+    if (moneyPerClick >= 1000000 && !achievementTest5) {
+        achievementTest5 = true;
+        money += 50000000
+        message('Mythical Monster Slain!', 'achievement5');
+    }
+    if (moneyPerClick >= 10000000 && !achievementTest6) {
+        achievementTest6 = true;
+        money += 300000000
+        message('Eldritch Monster Slain!', 'achievement6');
+    }
+    if (moneyPerClick >= 100000000 && !achievementTest7) {
+        achievementTest7 = true;
+        money += 6000000000
+        message('Void Lord Slain!', 'achievement7');
+    }
+    if (moneyPerClick >= 1000000000 && !achievementTest8) {
+        achievementTest8 = true;
+        money += 90000000000
+        message('Demi-god Slain!', 'achievement8');
+    }
+    if (moneyPerClick >= 10000000000 && !achievementTest9) {
+        achievementTest9 = true;
+        money = Infinity
+        message('God Monster Slain!', 'achievement9');
+    }
+    if (moneyPerClick >= 100000000000 && !achievementTest10) {
+        achievementTest10 = true;
+        money = NaN
+        message('Eldritch monstrosity - god of all gods Slain!', 'achievement10');
+    }
     window.requestAnimationFrame(step);
 }
 
@@ -113,6 +166,12 @@ upgrades = [
         clicks: 1,
     },
     {
+        name: '. . . . . . . . . . .[Strength]', 
+        class: 'str',
+        cost: 10,
+        amount: 10
+    },
+    {
         name: '. . . . . . . . . . .[Wooden Sword]',
         class: 'wood-sword',
         cost: 100,
@@ -148,8 +207,17 @@ upgrades = [
         cost: 45000000,
         clicks: 100000,
     },
+    {
+        name: '. . . . . . . . . . .[EXTERMINATUS]',
+        class: 'exterm',
+        cost: 950000000,
+        clicks: 100000000,
+    },
 ];
 
+    if (upgrade.fists) {
+
+}
 /* createCard är en funktion som tar ett upgrade objekt som parameter och skapar
  * ett html kort för det.
  * För att skapa nya html element så används document.createElement(), elementen
@@ -185,8 +253,8 @@ function createCard(upgrade) {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
-            upgrade.cost *= 2;
-            cost.textContent = 'Buy For ' + upgrade.cost + ' Souls';
+            upgrade.cost *= 1.5
+            cost.textContent = 'Buy For ' + Math.round(upgrade.cost) + ' Souls';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Congratulations, you feel stronger!', 'success');

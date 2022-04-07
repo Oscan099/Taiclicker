@@ -7,10 +7,7 @@
     box-sizing: border-box;
 }
 
-* {
-    font-size: 100%;
-    font-family: Arial;
-   }
+
 /* Remove default margin */
 body,
 h1,
@@ -173,15 +170,25 @@ footer {
 
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
-    width: 10rem;
-    height: 10rem;
-}
-
-#click {
-    padding: 0;
-    background-color: transparent;
+    padding: 0px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #8f8f8f;
     border: none;
-}
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  #click:hover {background-color: #a0a0a0}
+  
+  #click:active {
+    background-color: #979797;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
 * fixed fungerar liknande absolute för att positionera element på ett fast ställe
 * vi använder måttet vmin som skalas efter webbläsarens storlek
@@ -211,9 +218,49 @@ footer {
 
 .achievement {
     color: #121212;
-    background-color: rebeccapurple;
+    background-color: green;
 }
 
+.achievement2 {
+    color: black;
+    background-color: blue
+}
+.achievement3 {
+    color: black;
+    background-color: rgb(163, 24, 182)
+}
+.achievement4 {
+    color: black;
+    background-color: rgb(238, 150, 17)
+}
+.achievement5 {
+    color: black;
+    background-color: rgb(228, 26, 26)
+}
+.achievement6 {
+    color: black;
+    background-image: url(../img/eld.png);
+    background-color: rgb(238, 82, 243);
+    background-size: cover;
+}
+.achievement7 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0)
+}
+.achievement8 {
+    color: black;
+    background-color: rgb(255, 252, 96)
+}
+.achievement9 {
+    color: black;
+    background-color: rgb(248, 248, 248)
+}
+.achievement10 {
+    color: black;
+    background-color: rgb(255, 0, 200);
+    background-image: url(../img/godofgods.png);
+    background-size: cover;
+}
 /* dessa kort används för spelets uppgraderingar 
  * lägg märke till padding och margin för att ge elementen lite luft och 
  * skapa en mer lättläst struktur
@@ -241,7 +288,7 @@ footer {
     font-weight: 600;
 }
 body {
-    background-image: url("../img/Bakgrund.png");
+    background-image: url("../img/background.png");
     background-size: cover;
    }
 .img-container {
@@ -289,5 +336,16 @@ body {
 .nuke {
     background-image: url(../img/nuke.png);
     background-repeat: no-repeat;   
+    background-size: initial;
+}
+
+.exterm {
+    background-image: url(../img/exterminatus.png   );
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+.str {
+    background-image: url(../img/str.png   );
+    background-repeat: no-repeat;
     background-size: initial;
 }
