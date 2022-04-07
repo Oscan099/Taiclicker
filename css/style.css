@@ -320,6 +320,11 @@ body {
     background-repeat: no-repeat;   
     background-size: initial;
 }
+.slap {
+    background-image: url(../img/whip.png);
+    background-repeat: no-repeat;   
+    background-size: initial;
+}
 
 .eldritch-blade {
     background-image: url(../img/eldritch.png);

@@ -124,10 +124,10 @@ function step(timestamp) {
         money = Infinity
         message('God Monster Slain!', 'achievement9');
     }
-    if (moneyPerClick >= 100000000000 && !achievementTest10) {
+    if (moneyPerClick >= Infinity && !achievementTest10) {
         achievementTest10 = true;
         money = NaN
-        message('Eldritch monstrosity - god of all gods Slain!', 'achievement10');
+        message('YOU ARE THE MOST POWERFUL CREATURE IN THE KNOWN UNIVERSE!', 'achievement10');
     }
     window.requestAnimationFrame(step);
 }
@@ -188,6 +188,12 @@ upgrades = [
         class: 'sharpness',
         cost: 3000,
         amount: 30,
+    },
+    {
+        name: '. . . . . . . . . . .[Sappy Slappy]',
+        class: 'slap',
+        cost: 30000,
+        clicks: 100,
     },
     {
         name: '. . . . . . . . . . .[Eldritch blade]',
