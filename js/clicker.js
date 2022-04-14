@@ -96,12 +96,12 @@ function step(timestamp) {
     }
     if (moneyPerClick >= 10000 && !achievementTest4) {
         achievementTest4 = true;
-        money += 300000
+        money += 3000000
         message('Legendary Monster Slain!', 'achievement4');
     }
     if (moneyPerClick >= 1000000 && !achievementTest5) {
         achievementTest5 = true;
-        money += 50000000
+        money += 300000000
         message('Mythical Monster Slain!', 'achievement5');
     }
     if (moneyPerClick >= 10000000 && !achievementTest6) {
